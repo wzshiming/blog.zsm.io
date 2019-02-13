@@ -1,7 +1,13 @@
 
 
-server:
-	hexo clean && hexo server
+server: clean generate
+	hexo server
 
-deploy:
+deploy: generate
 	hexo deploy
+
+generate:
+	hexo generate
+
+clean:
+	hexo clean
