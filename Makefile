@@ -3,7 +3,7 @@
 server: clean generate
 	hexo server
 
-deploy: generate
+deploy:
 	hexo deploy
 
 generate:
