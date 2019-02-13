@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /page/*/
-Disallow: /archives/*
 Host: https://blog.zsm.io
