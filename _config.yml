@@ -79,6 +79,6 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/wzshiming/wzshiming.github.io
-  branch: master
+  repo: https://github.com/wzshiming/blog.zsm.io
+  branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
