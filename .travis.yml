@@ -1,0 +1,18 @@
+language: node_js
+node_js: stable
+
+sudo: false
+notifications:
+  email: false
+
+branches:
+  only:
+  - master
+
+install:
+- npm install
+- npm install -g hexo-cli
+
+script:
+- 'sed -i "s#repo: https://github.com#repo: https://${CI_TOKEN}@github.com#g" ./_config.yml'
+- make deploy
