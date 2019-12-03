@@ -20,7 +20,7 @@ ssh 的 ProxyCommand 使用不同协议使用不用的工具不同的语法格�
 在监听端口的功能,一开始只支持 ssh ProxyCommand 的方式,使用 STDIO 和 ssh 通信
 后面加上监听本地端口,甚至可以监听 ssh 服务器上的端口
 
-当前支持
+## 支持的协议
 - http(s)-connect 拨号
 - socks4/4a 拨号
 - socks5/5h 拨号

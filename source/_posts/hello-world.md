@@ -2,6 +2,7 @@
 title: Hello World
 date: 2019-02-12
 tags:
+    - misc
 ---
 
 按照惯例 helloworld

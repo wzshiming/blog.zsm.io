@@ -2,6 +2,7 @@
 title: Hello Hexo
 date: 2019-02-12
 tags:
+    - misc
 ---
 
 开始用 Hexo 
