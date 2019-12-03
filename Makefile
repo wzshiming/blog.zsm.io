@@ -1,13 +1,16 @@
 
 
-server: clean generate
-	hexo server
+server: install clean build
+	npm run server
 
 deploy:
-	hexo deploy
+	npm run deploy
 
-generate:
-	hexo generate
+build:
+	npm run build
 
 clean:
-	hexo clean
+	npm run clean
+
+install:
+	npm install
