@@ -1,6 +1,7 @@
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/theme-next/hexo-theme-next
+	branch = master
 [submodule ".deploy_git"]
 	path = .deploy_git
 	url = https://github.com/wzshiming/blog.zsm.io
