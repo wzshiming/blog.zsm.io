@@ -28,6 +28,13 @@ ssh 的 ProxyCommand 使用不同协议使用不用的工具不同的语法格�
 
 ## 用法
 
+映射 github.io:80 tcp 端口到本机的 8080 端口  
+由于是使用 ip 访问的 访问会返回 404 页面  
+
+``` shell
+bridge -b :8080 -p github.io:80
+```
+
 ### 各种协议的代理
 
 ``` bash
