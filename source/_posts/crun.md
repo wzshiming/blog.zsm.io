@@ -1,12 +1,10 @@
 ---
-title: Crun
+title: Crun - 根据正则生成密码字典
 date: 2019-02-13
 tags: 
     - tools
     - golang
 ---
-
-# Crun - 根据正则生成密码字典
 
 [![GitHub stars](https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star)github.com/wzshiming/crun](https://github.com/wzshiming/crun)
 
