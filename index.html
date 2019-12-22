@@ -195,7 +195,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-22 18:22:25" itemprop="dateModified" datetime="2019-12-22T18:22:25+08:00">2019-12-22</time>
+                <time title="修改时间：2019-12-22 18:22:54" itemprop="dateModified" datetime="2019-12-22T18:22:54+08:00">2019-12-22</time>
               </span>
 
           
@@ -266,7 +266,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/02/12/crun/" class="post-title-link" itemprop="url">Crun</a>
+            <a href="/2019/02/12/crun/" class="post-title-link" itemprop="url">Crun - 根据正则生成密码字典</a>
         </h2>
 
         <div class="post-meta">
@@ -283,7 +283,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-22 18:22:25" itemprop="dateModified" datetime="2019-12-22T18:22:25+08:00">2019-12-22</time>
+                <time title="修改时间：2019-12-22 18:22:54" itemprop="dateModified" datetime="2019-12-22T18:22:54+08:00">2019-12-22</time>
               </span>
 
           
@@ -297,13 +297,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Crun-根据正则生成密码字典"><a href="#Crun-根据正则生成密码字典" class="headerlink" title="Crun - 根据正则生成密码字典"></a>Crun - 根据正则生成密码字典</h1><p><a href="https://github.com/wzshiming/crun" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
+          <p><a href="https://github.com/wzshiming/crun" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
 <h2 id="通常的生成密码字典"><a href="#通常的生成密码字典" class="headerlink" title="通常的生成密码字典"></a>通常的生成密码字典</h2><p>用处很简单就是根据规则生成密码<br>但是使用十分麻烦</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 最小为1,最大为6 在abcdefg中所有可能的组合</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">crunch 1 6 abcdefg</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 调用密码库 charset.lst， 生成最小为1，最大为8 所有可能的组合</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">crunch 1 8 -f charset.lst mixalpha-numeric-all-space</span></pre></td></tr></table></figure>
 <p>我第一想法为什么不能用 正则生成字典<br>谷歌度娘找了一圈可能真的没有<br>没有那就自己写一个呗</p>
 <h2 id="这个工具的生成密码字典"><a href="#这个工具的生成密码字典" class="headerlink" title="这个工具的生成密码字典"></a>这个工具的生成密码字典</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 1到6位长度的数字所有可能性组合</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">crun <span class="string">"\d&#123;1,6&#125;"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出到 ditc.txt 文件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">crun <span class="string">"\d&#123;1,6&#125;"</span> &gt; ditc.txt</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 暴力美学</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">crun <span class="string">"(root|admin):[0-9]&#123;4,10&#125;"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># !!!!! 注意如果量太大会超卡的</span></span></pre></td></tr></table></figure>
 
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">go get -v github.com/wzshiming/crun/cmd/crun</span></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -353,7 +354,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-22 18:22:25" itemprop="dateModified" datetime="2019-12-22T18:22:25+08:00">2019-12-22</time>
+                <time title="修改时间：2019-12-22 18:22:54" itemprop="dateModified" datetime="2019-12-22T18:22:54+08:00">2019-12-22</time>
               </span>
 
           
@@ -430,7 +431,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-22 18:22:25" itemprop="dateModified" datetime="2019-12-22T18:22:25+08:00">2019-12-22</time>
+                <time title="修改时间：2019-12-22 18:22:54" itemprop="dateModified" datetime="2019-12-22T18:22:54+08:00">2019-12-22</time>
               </span>
 
           
