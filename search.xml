@@ -50,17 +50,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2019/02/11/hello-world/</url>
-    <content><![CDATA[<p>按照惯例 helloworld</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.c</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc main.c -o main &amp;&amp; ./main</span></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello Hexo</title>
     <url>/2019/02/11/hello-hexo/</url>
     <content><![CDATA[<p>开始用 Hexo<br>搭建我的技术博客<br>养成写博客的习惯<br>之前的写的太丑放弃了好几次<br>新年新 Flag </p>
@@ -77,6 +66,17 @@
 
 <p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZGVwbG95bWVudC5odG1s" title="https://hexo.io/docs/deployment.html">Deployment<i class="fa fa-external-link"></i></span></p>
 ]]></content>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/02/11/hello-world/</url>
+    <content><![CDATA[<p>按照惯例 helloworld</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.c</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc main.c -o main &amp;&amp; ./main</span></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>misc</tag>
       </tags>
