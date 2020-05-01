@@ -245,7 +245,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="https://github.com/wzshiming/crun" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
+        <p><a href="https://github.com/wzshiming/crun" target="_blank" rel="noopener"><img data-src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
 <h2 id="通常的生成密码字典"><a href="#通常的生成密码字典" class="headerlink" title="通常的生成密码字典"></a>通常的生成密码字典</h2><p>用处很简单就是根据规则生成密码<br>但是使用十分麻烦</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 最小为1,最大为6 在abcdefg中所有可能的组合</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">crunch 1 6 abcdefg</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 调用密码库 charset.lst， 生成最小为1，最大为8 所有可能的组合</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">crunch 1 8 -f charset.lst mixalpha-numeric-all-space</span></pre></td></tr></table></figure>
 <p>我第一想法为什么不能用 正则生成字典<br>谷歌度娘找了一圈可能真的没有<br>没有那就自己写一个呗</p>
@@ -272,8 +272,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/02/12/hello-hexo/" rel="prev" title="Hello Hexo">
-      <i class="fa fa-chevron-left"></i> Hello Hexo
+    <a href="/2019/02/12/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
       <div class="post-nav-item">
     <a href="/2019/12/03/bridge/" rel="next" title="Bridge - TCP 桥">

@@ -3,7 +3,7 @@
   <entry>
     <title>Bridge - TCP 桥</title>
     <url>/2019/12/03/bridge/</url>
-    <content><![CDATA[<p><a href="https://github.com/wzshiming/bridge" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/wzshiming/bridge.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/bridge</a></p>
+    <content><![CDATA[<p><a href="https://github.com/wzshiming/bridge" target="_blank" rel="noopener"><img data-src="https://img.shields.io/github/stars/wzshiming/bridge.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/bridge</a></p>
 <p>由于经常要 ssh 连接不同的服务器需要经过跳板机<br>ssh 的 ProxyCommand 使用不同协议使用不用的工具不同的语法格式<br>在多级代理上甚至不知道如何配置非常麻烦</p>
 <p>写这个的初衷就是简化 ssh ProxyCommand 后面的命令格式以统一的格式处理不用的代理协议<br>后续发现可以写成一个通用的 tcp 代理</p>
 <p>在监听端口的功能,一开始只支持 ssh ProxyCommand 的方式,使用 STDIO 和 ssh 通信<br>后面加上监听本地端口,甚至可以监听 ssh 服务器上的端口</p>
@@ -36,7 +36,7 @@
   <entry>
     <title>Crun - 根据正则生成密码字典</title>
     <url>/2019/02/13/crun/</url>
-    <content><![CDATA[<p><a href="https://github.com/wzshiming/crun" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
+    <content><![CDATA[<p><a href="https://github.com/wzshiming/crun" target="_blank" rel="noopener"><img data-src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
 <h2 id="通常的生成密码字典"><a href="#通常的生成密码字典" class="headerlink" title="通常的生成密码字典"></a>通常的生成密码字典</h2><p>用处很简单就是根据规则生成密码<br>但是使用十分麻烦</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 最小为1,最大为6 在abcdefg中所有可能的组合</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">crunch 1 6 abcdefg</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 调用密码库 charset.lst， 生成最小为1，最大为8 所有可能的组合</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">crunch 1 8 -f charset.lst mixalpha-numeric-all-space</span></pre></td></tr></table></figure>
 <p>我第一想法为什么不能用 正则生成字典<br>谷歌度娘找了一圈可能真的没有<br>没有那就自己写一个呗</p>
@@ -50,33 +50,33 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello Hexo</title>
-    <url>/2019/02/12/hello-hexo/</url>
-    <content><![CDATA[<p>开始用 Hexo<br>搭建我的技术博客<br>养成写博客的习惯<br>之前的写的太丑放弃了好几次<br>新年新 Flag </p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2019/02/12/hello-world/</url>
     <content><![CDATA[<p>按照惯例 helloworld</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.c</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc main.c -o main &amp;&amp; ./main</span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello Hexo</title>
+    <url>/2019/02/12/hello-hexo/</url>
+    <content><![CDATA[<p>开始用 Hexo<br>搭建我的技术博客<br>养成写博客的习惯<br>之前的写的太丑放弃了好几次<br>新年新 Flag </p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span></pre></td></tr></table></figure>
+
+<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s">Writing<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure>
+
+<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=">Server<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure>
+
+<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s">Generating<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure>
+
+<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZGVwbG95bWVudC5odG1s">Deployment<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
       <tags>
         <tag>misc</tag>
       </tags>
