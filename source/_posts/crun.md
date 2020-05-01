@@ -14,7 +14,6 @@ tags:
 ``` bash
 # 生成 最小为1,最大为6 在abcdefg中所有可能的组合
 crunch 1 6 abcdefg
-
 # 调用密码库 charset.lst， 生成最小为1，最大为8 所有可能的组合
 crunch 1 8 -f charset.lst mixalpha-numeric-all-space
 ```
