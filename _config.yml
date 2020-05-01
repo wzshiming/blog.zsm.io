@@ -112,6 +112,7 @@ theme_config:
   #scheme: Mist
   #scheme: Pisces
   scheme: Gemini
+  darkmode: true
 
   # ============================================================= #
   # ================= Site Information Settings ================= #
