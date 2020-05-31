@@ -40,6 +40,8 @@ bridge -b :8080 -p github.io:80 -p ssh://username:password@my_server:22
 bridge -b :8080 -p github.io:80 -p ssh://username@my_server:22?identity_file=~/.ssh/id_rsa
 bridge -b :8080 -p github.io:80 -p socks5://username:password@my_server:1080
 bridge -b :8080 -p github.io:80 -p http://username:password@my_server:8080
+bridge -b :8080 -p github.io:80 -p 'cmd:nc %h %p'
+bridge -b :8080 -p github.io:80 -p 'cmd:ssh sshserver nc %h %p'
 ```
 
 ### 多级代理
