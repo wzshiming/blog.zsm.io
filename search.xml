@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Bridge - TCP 桥</title>
-    <url>/2019/12/03/bridge/</url>
+    <url>/2019/12/02/bridge/</url>
     <content><![CDATA[<p><a href="https://github.com/wzshiming/bridge"><img data-src="https://img.shields.io/github/stars/wzshiming/bridge.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/bridge</a></p>
 <p>由于经常要 ssh 连接不同的服务器需要经过跳板机<br>ssh 的 ProxyCommand 使用不同协议使用不用的工具不同的语法格式<br>在多级代理上甚至不知道如何配置非常麻烦</p>
 <p>写这个的初衷就是简化 ssh ProxyCommand 后面的命令格式以统一的格式处理不用的代理协议<br>后续发现可以写成一个通用的 tcp 代理</p>
@@ -28,8 +28,33 @@
       </tags>
   </entry>
   <entry>
+    <title>CentOS 7 静态 ip</title>
+    <url>/2021/01/13/centos7_static_ip/</url>
+    <content><![CDATA[<h2 id="CentOS-7-静态-ip-配置"><a href="#CentOS-7-静态-ip-配置" class="headerlink" title="CentOS 7 静态 ip 配置"></a>CentOS 7 静态 ip 配置</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># cat &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens192</span><br><span class="line">TYPE&#x3D;Ethernet</span><br><span class="line">PROXY_METHOD&#x3D;none</span><br><span class="line">BROWSER_ONLY&#x3D;no</span><br><span class="line">BOOTPROTO&#x3D;static # 这个标志着使用静态 ip</span><br><span class="line">DEFROUTE&#x3D;yes</span><br><span class="line">IPV4_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6INIT&#x3D;yes</span><br><span class="line">IPV6_AUTOCONF&#x3D;yes</span><br><span class="line">IPV6_DEFROUTE&#x3D;yes</span><br><span class="line">IPV6_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6_ADDR_GEN_MODE&#x3D;stable-privacy</span><br><span class="line">NAME&#x3D;ens192</span><br><span class="line">UUID&#x3D;0e999030-a255-4221-a06e-2a6fd6677419 # 不同机子uuid一样(虚拟机克隆) 会互相顶掉, 可以用 uuidgen 重新生成</span><br><span class="line">DEVICE&#x3D;ens192</span><br><span class="line">ONBOOT&#x3D;yes</span><br><span class="line">GATEWAY&#x3D;10.7.0.1 # 网关</span><br><span class="line">IPADDR&#x3D;10.7.111.13 # ip</span><br><span class="line">PREFIX&#x3D;16 # 掩码位数</span><br><span class="line">DNS1&#x3D;114.114.114.114</span><br><span class="line">ZONE&#x3D;public</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>linux</tag>
+        <tag>operation</tag>
+        <tag>ip</tag>
+        <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Crun - 根据正则生成密码字典</title>
+    <url>/2019/02/12/crun/</url>
+    <content><![CDATA[<p><a href="https://github.com/wzshiming/crun"><img data-src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
+<h2 id="通常的生成密码字典"><a href="#通常的生成密码字典" class="headerlink" title="通常的生成密码字典"></a>通常的生成密码字典</h2><p>用处很简单就是根据规则生成密码<br>但是使用十分麻烦</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 最小为1,最大为6 在abcdefg中所有可能的组合</span></span><br><span class="line">crunch 1 6 abcdefg</span><br><span class="line"><span class="comment"># 调用密码库 charset.lst， 生成最小为1，最大为8 所有可能的组合</span></span><br><span class="line">crunch 1 8 -f charset.lst mixalpha-numeric-all-space</span><br></pre></td></tr></table></figure>
+<p>我第一想法为什么不能用 正则生成字典<br>谷歌度娘找了一圈可能真的没有<br>没有那就自己写一个呗</p>
+<h2 id="这个工具的生成密码字典"><a href="#这个工具的生成密码字典" class="headerlink" title="这个工具的生成密码字典"></a>这个工具的生成密码字典</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 1到6位长度的数字所有可能性组合</span></span><br><span class="line">crun <span class="string">&quot;\d&#123;1,6&#125;&quot;</span></span><br><span class="line"><span class="comment"># 输出到 ditc.txt 文件</span></span><br><span class="line">crun <span class="string">&quot;\d&#123;1,6&#125;&quot;</span> &gt; ditc.txt</span><br><span class="line"><span class="comment"># 暴力美学</span></span><br><span class="line">crun <span class="string">&quot;(root|admin):[0-9]&#123;4,10&#125;&quot;</span></span><br><span class="line"><span class="comment"># !!!!! 注意如果量太大会超卡的</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">go get -v github.com/wzshiming/crun/cmd/crun</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>tools</tag>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello Hexo</title>
-    <url>/2019/02/12/hello-hexo/</url>
+    <url>/2019/02/11/hello-hexo/</url>
     <content><![CDATA[<p>开始用 Hexo<br>搭建我的技术博客<br>养成写博客的习惯<br>之前的写的太丑放弃了好几次<br>新年新 Flag </p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s">Writing<i class="fa fa-external-link-alt"></i></span></p>
@@ -45,38 +70,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Crun - 根据正则生成密码字典</title>
-    <url>/2019/02/13/crun/</url>
-    <content><![CDATA[<p><a href="https://github.com/wzshiming/crun"><img data-src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
-<h2 id="通常的生成密码字典"><a href="#通常的生成密码字典" class="headerlink" title="通常的生成密码字典"></a>通常的生成密码字典</h2><p>用处很简单就是根据规则生成密码<br>但是使用十分麻烦</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 最小为1,最大为6 在abcdefg中所有可能的组合</span></span><br><span class="line">crunch 1 6 abcdefg</span><br><span class="line"><span class="comment"># 调用密码库 charset.lst， 生成最小为1，最大为8 所有可能的组合</span></span><br><span class="line">crunch 1 8 -f charset.lst mixalpha-numeric-all-space</span><br></pre></td></tr></table></figure>
-<p>我第一想法为什么不能用 正则生成字典<br>谷歌度娘找了一圈可能真的没有<br>没有那就自己写一个呗</p>
-<h2 id="这个工具的生成密码字典"><a href="#这个工具的生成密码字典" class="headerlink" title="这个工具的生成密码字典"></a>这个工具的生成密码字典</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 1到6位长度的数字所有可能性组合</span></span><br><span class="line">crun <span class="string">&quot;\d&#123;1,6&#125;&quot;</span></span><br><span class="line"><span class="comment"># 输出到 ditc.txt 文件</span></span><br><span class="line">crun <span class="string">&quot;\d&#123;1,6&#125;&quot;</span> &gt; ditc.txt</span><br><span class="line"><span class="comment"># 暴力美学</span></span><br><span class="line">crun <span class="string">&quot;(root|admin):[0-9]&#123;4,10&#125;&quot;</span></span><br><span class="line"><span class="comment"># !!!!! 注意如果量太大会超卡的</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">go get -v github.com/wzshiming/crun/cmd/crun</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>tools</tag>
-        <tag>golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
-    <url>/2019/02/12/hello-world/</url>
+    <url>/2019/02/11/hello-world/</url>
     <content><![CDATA[<p>按照惯例 helloworld</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc main.c -o main &amp;&amp; ./main</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CentOS 7 静态 ip</title>
-    <url>/2021/01/14/centos7_static_ip/</url>
-    <content><![CDATA[<h2 id="CentOS-7-静态-ip-配置"><a href="#CentOS-7-静态-ip-配置" class="headerlink" title="CentOS 7 静态 ip 配置"></a>CentOS 7 静态 ip 配置</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># cat &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens192</span><br><span class="line">TYPE&#x3D;Ethernet</span><br><span class="line">PROXY_METHOD&#x3D;none</span><br><span class="line">BROWSER_ONLY&#x3D;no</span><br><span class="line">BOOTPROTO&#x3D;static # 这个标志着使用静态 ip</span><br><span class="line">DEFROUTE&#x3D;yes</span><br><span class="line">IPV4_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6INIT&#x3D;yes</span><br><span class="line">IPV6_AUTOCONF&#x3D;yes</span><br><span class="line">IPV6_DEFROUTE&#x3D;yes</span><br><span class="line">IPV6_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6_ADDR_GEN_MODE&#x3D;stable-privacy</span><br><span class="line">NAME&#x3D;ens192</span><br><span class="line">UUID&#x3D;0e999030-a255-4221-a06e-2a6fd6677419 # 不同机子uuid一样(虚拟机克隆) 会互相顶掉, 可以用 uuidgen 重新生成</span><br><span class="line">DEVICE&#x3D;ens192</span><br><span class="line">ONBOOT&#x3D;yes</span><br><span class="line">GATEWAY&#x3D;10.7.0.1 # 网关</span><br><span class="line">IPADDR&#x3D;10.7.111.13 # ip</span><br><span class="line">PREFIX&#x3D;16 # 掩码位数</span><br><span class="line">DNS1&#x3D;114.114.114.114</span><br><span class="line">ZONE&#x3D;public</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>linux</tag>
-        <tag>operation</tag>
-        <tag>ip</tag>
-        <tag>note</tag>
       </tags>
   </entry>
 </search>
