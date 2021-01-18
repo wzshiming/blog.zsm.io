@@ -28,8 +28,17 @@
       </tags>
   </entry>
   <entry>
-    <title>CentOS 7 静态 ip</title>
-    <url>/2021/01/13/centos7_static_ip/</url>
+    <title>CentOS 源的发行版指定</title>
+    <url>/2021/01/17/centos_releasever/</url>
+    <content><![CDATA[<p>/etc/yum/vars/releasever</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS 静态 ip</title>
+    <url>/2021/01/13/centos_static_ip/</url>
     <content><![CDATA[<h2 id="CentOS-7-静态-ip-配置"><a href="#CentOS-7-静态-ip-配置" class="headerlink" title="CentOS 7 静态 ip 配置"></a>CentOS 7 静态 ip 配置</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># cat &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens192</span><br><span class="line">TYPE&#x3D;Ethernet</span><br><span class="line">PROXY_METHOD&#x3D;none</span><br><span class="line">BROWSER_ONLY&#x3D;no</span><br><span class="line">BOOTPROTO&#x3D;static # 这个标志着使用静态 ip</span><br><span class="line">DEFROUTE&#x3D;yes</span><br><span class="line">IPV4_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6INIT&#x3D;yes</span><br><span class="line">IPV6_AUTOCONF&#x3D;yes</span><br><span class="line">IPV6_DEFROUTE&#x3D;yes</span><br><span class="line">IPV6_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6_ADDR_GEN_MODE&#x3D;stable-privacy</span><br><span class="line">NAME&#x3D;ens192</span><br><span class="line">UUID&#x3D;0e999030-a255-4221-a06e-2a6fd6677419 # 不同机子uuid一样(虚拟机克隆) 会互相顶掉, 可以用 uuidgen 重新生成</span><br><span class="line">DEVICE&#x3D;ens192</span><br><span class="line">ONBOOT&#x3D;yes</span><br><span class="line">GATEWAY&#x3D;10.7.0.1 # 网关</span><br><span class="line">IPADDR&#x3D;10.7.111.13 # ip</span><br><span class="line">PREFIX&#x3D;16 # 掩码位数</span><br><span class="line">DNS1&#x3D;114.114.114.114</span><br><span class="line">ZONE&#x3D;public</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>linux</tag>
