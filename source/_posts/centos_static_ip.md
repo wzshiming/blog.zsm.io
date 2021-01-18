@@ -1,5 +1,5 @@
 ---
-title: CentOS 7 静态 ip
+title: CentOS 静态 ip
 date: 2021-01-14
 tags: 
     - linux
