@@ -88,4 +88,17 @@
         <tag>misc</tag>
       </tags>
   </entry>
+  <entry>
+    <title>在本地使用远端的 docker 和 k8s</title>
+    <url>/2021/01/25/proxy_k8s_client/</url>
+    <content><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d6c2hpbWluZy9icmlkZ2U=">https://github.com/wzshiming/bridge<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Docker-连接代理"><a href="#Docker-连接代理" class="headerlink" title="Docker 连接代理"></a>Docker 连接代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 代理远端的 docker 到本地的 2376 端口</span></span><br><span class="line">bridge -b &#x27;tcp://127.0.0.1:2376&#x27; -p &#x27;unix:///var/run/docker.sock&#x27; -p nc: -p &#x27;ssh://root@hostname?identity_file=~/.ssh/id_rsa&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置环境变量, 新开终端执行 docker 命令</span></span><br><span class="line">DOCKER_HOST=tcp://127.0.0.1:2376 docker ps</span><br></pre></td></tr></table></figure>
+<h2 id="k8s-连接代理"><a href="#k8s-连接代理" class="headerlink" title="k8s 连接代理"></a>k8s 连接代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 代理远端的建立远端的内网代理</span></span><br><span class="line">bridge -b &#x27;tcp://127.0.0.1:8000&#x27; -p - -p &#x27;ssh://root@hostname?identity_file=~/.ssh/id_rsa&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置环境变量, 新开终端执行 kubectl 命令</span></span><br><span class="line">ALL_PROXY=127.0.0.1:8000 kubectl get node</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>tools</tag>
+        <tag>proxy</tag>
+      </tags>
+  </entry>
 </search>
