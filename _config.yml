@@ -657,7 +657,7 @@ theme_config:
   # Disqus
   disqus:
     enable: true
-    shortname:
+    shortname: wzshiming
     count: true
     #post_meta_order: 0
 
