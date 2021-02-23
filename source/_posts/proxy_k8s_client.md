@@ -23,7 +23,7 @@ DOCKER_HOST=tcp://127.0.0.1:2376 docker ps
 
 ## k8s 连接代理
 ``` shell
-# 代理远端的建立远端的内网代理
+# 代理远端的 k8s 到本地的 8000 端口
 bridge -b 'tcp://127.0.0.1:8000' -p - -p 'ssh://root@hostname?identity_file=~/.ssh/id_rsa'
 ```
 
