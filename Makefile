@@ -14,7 +14,8 @@ clean:
 
 install:
 	npm install
+	pip3 install yq
 
 pull_all:
-	git submodule update --init
-	git submodule foreach -q --recursive 'branch="$$(git config -f $$toplevel/.gitmodules submodule.$$name.branch)"; git checkout $$branch'
+	git clone --depth 1 -b $$(cat _config.yml | yq -j '.deploy.branch') $$(cat _config.yml | yq -j '.deploy.repo') .deploy_git
+	git clone --depth 1 https://github.com/theme-next/hexo-theme-next themes/next
