@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: |
+          make install pull_all
+
+      - name: Deploy
+        run: |
+          git config --global user.name "bot"
+          sed -i "s#repo: https://github.com#repo: https://bot:${{ secrets.GITHUB_TOKEN }}@github.com#g" ./_config.yml
+          make deploy
