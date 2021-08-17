@@ -48,6 +48,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Containerd 安装</title>
+    <url>/2021/08/02/containerd/</url>
+    <content><![CDATA[<h2 id="Containerd-安装"><a href="#Containerd-安装" class="headerlink" title="Containerd  安装"></a>Containerd  安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=1.5.4</span><br><span class="line">wget -c https://github.com/containerd/containerd/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/containerd-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line">tar xvf containerd-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz -C /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir /etc/containerd/ &amp;&amp; containerd config default &gt; /etc/containerd/config.toml</span><br><span class="line">wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service</span><br><span class="line">systemctl start containerd</span><br></pre></td></tr></table></figure>
+<h2 id="Nerdctl-安装"><a href="#Nerdctl-安装" class="headerlink" title="Nerdctl 安装"></a>Nerdctl 安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=0.11.0</span><br><span class="line">wget -c https://github.com/containerd/nerdctl/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/nerdctl-full-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line">tar xvf nerdctl-full-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz -C /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>linux</tag>
+        <tag>operation</tag>
+        <tag>note</tag>
+        <tag>containerd</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Crun - 根据正则生成密码字典</title>
     <url>/2019/02/12/crun/</url>
     <content><![CDATA[<p><a href="https://github.com/wzshiming/crun"><img data-src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>

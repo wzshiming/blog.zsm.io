@@ -25,23 +25,23 @@
     var CONFIG = {"hostname":"blog.zsm.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="github.com&#x2F;wzshiming&#x2F;bridge 由于经常要 ssh 连接不同的服务器需要经过跳板机ssh 的 ProxyCommand 使用不同协议使用不用的工具不同的语法格式在多级代理上甚至不知道如何配置非常麻烦 写这个的初衷就是简化 ssh ProxyCommand 后面的命令格式以统一的格式处理不用的代理协议后续发现可以写成一个通用的 tcp 代理 在监听端口的功能,一开始只支持 s">
+  <meta name="description" content="Containerd  安装123456VERSION&#x3D;1.5.4wget -c https:&#x2F;&#x2F;github.com&#x2F;containerd&#x2F;containerd&#x2F;releases&#x2F;download&#x2F;v$&amp;#123;VERSION&amp;#125;&#x2F;containerd-$&amp;#123;VERSION&amp;#125;-linux-amd64.tar.gztar xvf containerd-$&amp;#123;VE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bridge - TCP 桥">
-<meta property="og:url" content="https://blog.zsm.io/2019/12/02/bridge/index.html">
+<meta property="og:title" content="Containerd 安装">
+<meta property="og:url" content="https://blog.zsm.io/2021/08/02/containerd/index.html">
 <meta property="og:site_name" content="Zsm&#39;s Blog">
-<meta property="og:description" content="github.com&#x2F;wzshiming&#x2F;bridge 由于经常要 ssh 连接不同的服务器需要经过跳板机ssh 的 ProxyCommand 使用不同协议使用不用的工具不同的语法格式在多级代理上甚至不知道如何配置非常麻烦 写这个的初衷就是简化 ssh ProxyCommand 后面的命令格式以统一的格式处理不用的代理协议后续发现可以写成一个通用的 tcp 代理 在监听端口的功能,一开始只支持 s">
+<meta property="og:description" content="Containerd  安装123456VERSION&#x3D;1.5.4wget -c https:&#x2F;&#x2F;github.com&#x2F;containerd&#x2F;containerd&#x2F;releases&#x2F;download&#x2F;v$&amp;#123;VERSION&amp;#125;&#x2F;containerd-$&amp;#123;VERSION&amp;#125;-linux-amd64.tar.gztar xvf containerd-$&amp;#123;VE">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img.shields.io/github/stars/wzshiming/bridge.svg?style=social&label=Star">
-<meta property="article:published_time" content="2019-12-02T16:00:00.000Z">
+<meta property="article:published_time" content="2021-08-02T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-17T08:51:43.633Z">
 <meta property="article:author" content="wzshiming">
-<meta property="article:tag" content="tools">
-<meta property="article:tag" content="golang">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="operation">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="containerd">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.shields.io/github/stars/wzshiming/bridge.svg?style=social&label=Star">
 
-<link rel="canonical" href="https://blog.zsm.io/2019/12/02/bridge/">
+<link rel="canonical" href="https://blog.zsm.io/2021/08/02/containerd/">
 
 
 <script id="page-configurations">
@@ -54,7 +54,7 @@
   };
 </script>
 
-  <title>Bridge - TCP 桥 | Zsm's Blog</title>
+  <title>Containerd 安装 | Zsm's Blog</title>
   
 
 
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.zsm.io/2019/12/02/bridge/">
+    <link itemprop="mainEntityOfPage" href="https://blog.zsm.io/2021/08/02/containerd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/6565744">
@@ -208,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Bridge - TCP 桥<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d6c2hpbWluZy9ibG9nLnpzbS5pby9lZGl0L21hc3Rlci9zb3VyY2UvX3Bvc3RzL2JyaWRnZS5tZA==" title="编辑"><i class="fa fa-pencil-alt"></i></span>
+          Containerd 安装<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d6c2hpbWluZy9ibG9nLnpzbS5pby9lZGl0L21hc3Rlci9zb3VyY2UvX3Bvc3RzL2NvbnRhaW5lcmQubWQ=" title="编辑"><i class="fa fa-pencil-alt"></i></span>
         </h1>
 
         <div class="post-meta">
@@ -218,7 +218,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-03 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-03T00:00:00+08:00">2019-12-03</time>
+              <time title="创建时间：2021-08-03 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-03T00:00:00+08:00">2021-08-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -237,8 +237,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/12/02/bridge/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/02/bridge/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/08/02/containerd/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/08/02/containerd/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -248,7 +248,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>704</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -267,25 +267,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a target="_blank" rel="noopener" href="https://github.com/wzshiming/bridge"><img data-src="https://img.shields.io/github/stars/wzshiming/bridge.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/bridge</a></p>
-<p>由于经常要 ssh 连接不同的服务器需要经过跳板机<br>ssh 的 ProxyCommand 使用不同协议使用不用的工具不同的语法格式<br>在多级代理上甚至不知道如何配置非常麻烦</p>
-<p>写这个的初衷就是简化 ssh ProxyCommand 后面的命令格式以统一的格式处理不用的代理协议<br>后续发现可以写成一个通用的 tcp 代理</p>
-<p>在监听端口的功能,一开始只支持 ssh ProxyCommand 的方式,使用 STDIO 和 ssh 通信<br>后面加上监听本地端口,甚至可以监听 ssh 服务器上的端口</p>
-<h2 id="支持的协议"><a href="#支持的协议" class="headerlink" title="支持的协议"></a>支持的协议</h2><ul>
-<li>http(s)-connect 拨号</li>
-<li>socks4/4a 拨号</li>
-<li>socks5/5h 拨号</li>
-<li>ssh 拨号 &amp; 监听</li>
-</ul>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>映射 github.io:80 tcp 端口到本机的 8080 端口<br>由于是使用 ip 访问的 访问会返回 404 页面  </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bridge -b :8080 -p github.io:80</span><br></pre></td></tr></table></figure>
-<h3 id="各种协议的代理"><a href="#各种协议的代理" class="headerlink" title="各种协议的代理"></a>各种协议的代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bridge -b :8080 -p github.io:80 -p ssh://username:password@my_server:22</span><br><span class="line">bridge -b :8080 -p github.io:80 -p ssh://username@my_server:22?identity_file=~/.ssh/id_rsa</span><br><span class="line">bridge -b :8080 -p github.io:80 -p socks5://username:password@my_server:1080</span><br><span class="line">bridge -b :8080 -p github.io:80 -p http://username:password@my_server:8080</span><br><span class="line">bridge -b :8080 -p github.io:80 -p <span class="string">&#x27;cmd:nc %h %p&#x27;</span></span><br><span class="line">bridge -b :8080 -p github.io:80 -p <span class="string">&#x27;cmd:ssh sshserver nc %h %p&#x27;</span></span><br></pre></td></tr></table></figure>
-<h3 id="多级代理"><a href="#多级代理" class="headerlink" title="多级代理"></a>多级代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bridge -b :8080 -p github.io:80 -p http://username:password@my_server2:8080 -p http://username:password@my_server1:8080</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="监听-ssh-端口"><a href="#监听-ssh-端口" class="headerlink" title="监听 ssh 端口"></a>监听 ssh 端口</h3><p>也可以通过 ssh 监听端口 本地的端口映射到服务器的端口<br>由于 sshd 的限制只能监听 127.0.0.1 的端口<br>如果想提供对外的服务需要把 /etc/ssh/sshd_config 里的 GatewayPorts no 改成 yes 然后重新加载 sshd  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bridge -b :8080 -b ssh://username:password@my_server:22 -p 127.0.0.1:80</span><br></pre></td></tr></table></figure>
-<h3 id="用作-ssh-代理"><a href="#用作-ssh-代理" class="headerlink" title="用作 ssh 代理"></a>用作 ssh 代理</h3><p>更多的时候我是用作 ssh 代理的<br>在 ~/.ssh/config  </p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ProxyCommand bridge -p %h:%p -p &quot;ssh://username@my_server?identity_file=~/.ssh/id_rsa&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">go get -v github.com/wzshiming/bridge/cmd/bridge</span><br></pre></td></tr></table></figure>
+        <h2 id="Containerd-安装"><a href="#Containerd-安装" class="headerlink" title="Containerd  安装"></a>Containerd  安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">VERSION=1.5.4</span><br><span class="line">wget -c https://github.com/containerd/containerd/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/containerd-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line">tar xvf containerd-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz -C /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir /etc/containerd/ &amp;&amp; containerd config default &gt; /etc/containerd/config.toml</span><br><span class="line">wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service</span><br><span class="line">systemctl start containerd</span><br></pre></td></tr></table></figure>
+<h2 id="Nerdctl-安装"><a href="#Nerdctl-安装" class="headerlink" title="Nerdctl 安装"></a>Nerdctl 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">VERSION=0.11.0</span><br><span class="line">wget -c https://github.com/containerd/nerdctl/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/nerdctl-full-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line">tar xvf nerdctl-full-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz -C /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -295,8 +278,10 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/tools/" rel="tag"><i class="fa fa-tag"></i> tools</a>
-              <a href="/tags/golang/" rel="tag"><i class="fa fa-tag"></i> golang</a>
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/operation/" rel="tag"><i class="fa fa-tag"></i> operation</a>
+              <a href="/tags/note/" rel="tag"><i class="fa fa-tag"></i> note</a>
+              <a href="/tags/containerd/" rel="tag"><i class="fa fa-tag"></i> containerd</a>
           </div>
 
         
@@ -305,13 +290,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/02/12/crun/" rel="prev" title="Crun - 根据正则生成密码字典">
-      <i class="fa fa-chevron-left"></i> Crun - 根据正则生成密码字典
+    <a href="/2021/04/25/generate_kubeconfig/" rel="prev" title="生成新的 kubeconfig">
+      <i class="fa fa-chevron-left"></i> 生成新的 kubeconfig
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/01/13/centos_static_ip/" rel="next" title="CentOS 静态 ip">
-      CentOS 静态 ip <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -377,7 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.</span> <span class="nav-text">支持的协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BB%A3%E7%90%86"><span class="nav-number">2.1.</span> <span class="nav-text">各种协议的代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%A7%E4%BB%A3%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">多级代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%91%E5%90%AC-ssh-%E7%AB%AF%E5%8F%A3"><span class="nav-number">2.3.</span> <span class="nav-text">监听 ssh 端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%BD%9C-ssh-%E4%BB%A3%E7%90%86"><span class="nav-number">2.4.</span> <span class="nav-text">用作 ssh 代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Containerd-%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">Containerd  安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nerdctl-%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">Nerdctl 安装</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -612,7 +594,7 @@ window.addEventListener('pjax:success', () => {
       quicklink({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.zsm.io/2019/12/02/bridge/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.zsm.io/2021/08/02/containerd/',]
       });
       });
   </script>
@@ -629,9 +611,9 @@ window.addEventListener('pjax:success', () => {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://blog.zsm.io/2019/12/02/bridge/";
-    this.page.identifier = "2019/12/02/bridge/";
-    this.page.title = "Bridge - TCP 桥";
+    this.page.url = "https://blog.zsm.io/2021/08/02/containerd/";
+    this.page.identifier = "2021/08/02/containerd/";
+    this.page.title = "Containerd 安装";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
