@@ -58,7 +58,7 @@ EOF
 
 SECRET_NAME="$(kubectl get sa -n ${NAMESPACE} ${NAME} -o 'jsonpath={$.secrets[0].name}')"
 CA_CRT="$(kubectl get secret -n ${NAMESPACE} ${SECRET_NAME} -o 'jsonpath={$.data.ca\.crt}')"
-TOKEN="$(kubectl get secret -n ${NAMESPACE} ${SECRET_NAME} -o 'jsonpath={$.data.token}' | base64 -D)"
+TOKEN="$(kubectl get secret -n ${NAMESPACE} ${SECRET_NAME} -o 'jsonpath={$.data.token}' | base64 --decode)"
 
 APISERVER_ADDRESS=${APISERVER_ADDRESS:-"$(kubectl get cm -n kube-public cluster-info -o yaml | grep 'server: ' | sed 's/server: //' | sed 's/ *//g')"}
 
