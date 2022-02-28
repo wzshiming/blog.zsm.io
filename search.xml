@@ -84,6 +84,36 @@
       </tags>
   </entry>
   <entry>
+    <title>Ferry - kubernetes 跨集群通信组件</title>
+    <url>/2022/02/24/ferry/</url>
+    <content><![CDATA[<h2 id="Ferry-是什么呢"><a href="#Ferry-是什么呢" class="headerlink" title="Ferry 是什么呢"></a>Ferry 是什么呢</h2><p>Ferry 是为 Kubernetes 开发的一个多集群通信组件</p>
+<p>Ferry 可以支持将一个集群的 Service 映射到另一个集群</p>
+<h3 id="下载-ferryctl-ferry-安装运维工具"><a href="#下载-ferryctl-ferry-安装运维工具" class="headerlink" title="下载 ferryctl (ferry 安装运维工具)"></a>下载 ferryctl (ferry 安装运维工具)</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZlcnJ5LXByb3h5L2ZlcnJ5Y3RsL3JlbGVhc2Vz">https://github.com/ferry-proxy/ferryctl/releases<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="初始化控制面集群"><a href="#初始化控制面集群" class="headerlink" title="初始化控制面集群"></a>初始化控制面集群</h3><h4 id="在控制面集群执行"><a href="#在控制面集群执行" class="headerlink" title="在控制面集群执行"></a>在控制面集群执行</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ferryctl control-plane init</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他数据面集群加入"><a href="#其他数据面集群加入" class="headerlink" title="其他数据面集群加入"></a>其他数据面集群加入</h3><h4 id="在控制面集群执行-1"><a href="#在控制面集群执行-1" class="headerlink" title="在控制面集群执行"></a>在控制面集群执行</h4><p>控制面集群可以连接到这个集群</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ferryctl control-plane pre-join direct 其他数据面集群名</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<p>控制面集群不可连接到这个集群</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ferryctl control-plane pre-join tunnel 其他数据面集群名</span><br></pre></td></tr></table></figure>
+
+<p>其他数据面集群名: 可以随意定但是后续规则里使用同样的就可以了</p>
+<h3 id="在数据面集群执行"><a href="#在数据面集群执行" class="headerlink" title="在数据面集群执行"></a>在数据面集群执行</h3><p>上一个命令执行后, 会响应一个命令复制到数据面集群执行</p>
+<h3 id="在控制面集群执行-2"><a href="#在控制面集群执行-2" class="headerlink" title="在控制面集群执行"></a>在控制面集群执行</h3><p>上一个命令执行后, 会响应一个命令复制到控制面集群执行</p>
+<h3 id="规则配置"><a href="#规则配置" class="headerlink" title="规则配置"></a>规则配置</h3><p>在控制面集群配置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 映射 cluster-1 带 labels app=web-1 的 service 映射到 control-plane 同名 service</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">ferry.zsm.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">FerryPolicy</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">ferry-test</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">ferry-system</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">rules:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">exports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">clusterName:</span> <span class="string">cluster-1</span></span><br><span class="line">          <span class="attr">match:</span></span><br><span class="line">            <span class="attr">labels:</span></span><br><span class="line">              <span class="attr">app:</span> <span class="string">web-1</span></span><br><span class="line">      <span class="attr">imports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">clusterName:</span> <span class="string">control-plane</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 映射 cluster-1 的 web-1.test.svc 映射到 control-plane 的 xxx-1.default.svc</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">ferry.zsm.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">FerryPolicy</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">ferry-test</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">ferry-system</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">rules:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">exports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">clusterName:</span> <span class="string">cluster-1</span></span><br><span class="line">          <span class="attr">match:</span></span><br><span class="line">            <span class="attr">namespace:</span> <span class="string">test</span></span><br><span class="line">            <span class="attr">name:</span> <span class="string">web-1</span></span><br><span class="line">      <span class="attr">imports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">clusterName:</span> <span class="string">control-plane</span></span><br><span class="line">          <span class="attr">match:</span></span><br><span class="line">            <span class="attr">namespace:</span> <span class="string">default</span></span><br><span class="line">            <span class="attr">name:</span> <span class="string">xxx-1</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>tools</tag>
+        <tag>golang</tag>
+        <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>生成新的 kubeconfig</title>
     <url>/2021/04/25/generate_kubeconfig/</url>
     <content><![CDATA[<p>主要记录一下自己写的拼凑 kubeconfig 的脚本<br>由于很难写成一个可定制化的东西, 当前先记录脚本按需求改改吧  </p>
