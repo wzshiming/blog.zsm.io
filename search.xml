@@ -88,7 +88,7 @@
     <url>/2022/02/24/ferry/</url>
     <content><![CDATA[<h2 id="Ferry-是什么呢"><a href="#Ferry-是什么呢" class="headerlink" title="Ferry 是什么呢"></a>Ferry 是什么呢</h2><p>Ferry 是为 Kubernetes 开发的一个多集群通信组件</p>
 <p>Ferry 可以支持将一个集群的 Service 映射到另一个集群</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>准备至少两个集群, 可以是一个节点的集群, 当最少也要两个才能做演示</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>准备至少两个集群, 可以是一个节点的集群或者 Kind 起的集群, 但最少也要两个才能做演示</p>
 <h3 id="下载-ferryctl-ferry-安装运维工具"><a href="#下载-ferryctl-ferry-安装运维工具" class="headerlink" title="下载 ferryctl (ferry 安装运维工具)"></a>下载 ferryctl (ferry 安装运维工具)</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZlcnJ5LXByb3h5L2ZlcnJ5Y3RsL3JlbGVhc2Vz">https://github.com/ferry-proxy/ferryctl/releases<i class="fa fa-external-link-alt"></i></span></p>
 <p>为每个集群的控制节点都安装一个 ferryctl</p>
 <h3 id="初始化控制面集群"><a href="#初始化控制面集群" class="headerlink" title="初始化控制面集群"></a>初始化控制面集群</h3><h4 id="在控制面集群执行"><a href="#在控制面集群执行" class="headerlink" title="在控制面集群执行"></a>在控制面集群执行</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ferryctl control-plane init</span><br></pre></td></tr></table></figure>
