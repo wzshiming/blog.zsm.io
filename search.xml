@@ -86,7 +86,9 @@
   <entry>
     <title>Ferry - kubernetes 跨集群通信组件</title>
     <url>/2022/02/24/ferry/</url>
-    <content><![CDATA[<h2 id="Ferry-是什么呢"><a href="#Ferry-是什么呢" class="headerlink" title="Ferry 是什么呢"></a>Ferry 是什么呢</h2><p>Ferry 是为 Kubernetes 开发的一个多集群通信组件</p>
+    <content><![CDATA[<h2 id="Ferry-是什么呢"><a href="#Ferry-是什么呢" class="headerlink" title="Ferry 是什么呢"></a>Ferry 是什么呢</h2><p>官网 <span class="exturl" data-url="aHR0cHM6Ly9mZXJyeXByb3h5LmlvLw==">https://ferryproxy.io/<i class="fa fa-external-link-alt"></i></span></p>
+<p>源码地址 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZlcnJ5cHJveHkvZmVycnk=">https://github.com/ferryproxy/ferry<i class="fa fa-external-link-alt"></i></span></p>
+<p>Ferry 是为 Kubernetes 开发的一个多集群通信组件</p>
 <p>Ferry 可以支持将一个集群的 Service 映射到另一个集群</p>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h1 id="快速开始-1"><a href="#快速开始-1" class="headerlink" title="快速开始"></a>快速开始</h1><p>准备至少两个集群才能做演示</p>
 <p>可以是一个节点的集群或者 Kind 起的集群但最少也要两个</p>
