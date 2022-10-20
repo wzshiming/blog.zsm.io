@@ -54,20 +54,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Containerd 安装</title>
-    <url>/2021/08/02/containerd/</url>
-    <content><![CDATA[<h2 id="Containerd-安装"><a href="#Containerd-安装" class="headerlink" title="Containerd  安装"></a>Containerd  安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=1.5.4</span><br><span class="line">wget -c https://github.com/containerd/containerd/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/containerd-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line">tar xvf containerd-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz -C /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir /etc/containerd/ &amp;&amp; containerd config default &gt; /etc/containerd/config.toml</span><br><span class="line">wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service</span><br><span class="line">systemctl start containerd</span><br></pre></td></tr></table></figure>
-
-<h2 id="Nerdctl-安装"><a href="#Nerdctl-安装" class="headerlink" title="Nerdctl 安装"></a>Nerdctl 安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=0.11.0</span><br><span class="line">wget -c https://github.com/containerd/nerdctl/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/nerdctl-full-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line">tar xvf nerdctl-full-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz -C /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-        <tag>operation</tag>
-        <tag>note</tag>
-        <tag>containerd</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Crun - 根据正则生成密码字典</title>
     <url>/2019/02/12/crun/</url>
     <content><![CDATA[<p><a href="https://github.com/wzshiming/crun"><img data-src="https://img.shields.io/github/stars/wzshiming/crun.svg?style=social&label=Star" alt="GitHub stars">github.com/wzshiming/crun</a></p>
@@ -84,13 +70,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Containerd 安装</title>
+    <url>/2021/08/02/containerd/</url>
+    <content><![CDATA[<h2 id="Containerd-安装"><a href="#Containerd-安装" class="headerlink" title="Containerd  安装"></a>Containerd  安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=1.5.4</span><br><span class="line">wget -c https://github.com/containerd/containerd/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/containerd-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line">tar xvf containerd-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz -C /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir /etc/containerd/ &amp;&amp; containerd config default &gt; /etc/containerd/config.toml</span><br><span class="line">wget -c -O /etc/systemd/system/containerd.service https://raw.githubusercontent.com/containerd/containerd/main/containerd.service</span><br><span class="line">systemctl start containerd</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nerdctl-安装"><a href="#Nerdctl-安装" class="headerlink" title="Nerdctl 安装"></a>Nerdctl 安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=0.11.0</span><br><span class="line">wget -c https://github.com/containerd/nerdctl/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/nerdctl-full-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line">tar xvf nerdctl-full-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz -C /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+        <tag>operation</tag>
+        <tag>note</tag>
+        <tag>containerd</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ferry - kubernetes 跨集群通信组件</title>
     <url>/2022/02/24/ferry/</url>
     <content><![CDATA[<h2 id="Ferry-是什么呢"><a href="#Ferry-是什么呢" class="headerlink" title="Ferry 是什么呢"></a>Ferry 是什么呢</h2><p>官网 <span class="exturl" data-url="aHR0cHM6Ly9mZXJyeXByb3h5LmlvLw==">https://ferryproxy.io/<i class="fa fa-external-link-alt"></i></span></p>
 <p>源码地址 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZlcnJ5cHJveHkvZmVycnk=">https://github.com/ferryproxy/ferry<i class="fa fa-external-link-alt"></i></span></p>
 <p>Ferry 是为 Kubernetes 开发的一个多集群通信组件</p>
 <p>Ferry 可以支持将一个集群的 Service 映射到另一个集群</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h1 id="快速开始-1"><a href="#快速开始-1" class="headerlink" title="快速开始"></a>快速开始</h1><p>准备至少两个集群才能做演示</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>准备至少两个集群才能做演示</p>
 <p>可以是一个节点的集群或者 Kind 起的集群但最少也要两个</p>
 <h2 id="下载-ferryctl"><a href="#下载-ferryctl" class="headerlink" title="下载 ferryctl"></a>下载 ferryctl</h2><p>ferryctl 是 ferry 的安装运维工具</p>
 <p>需要为每个集群的控制节点都安装一个 ferryctl</p>
